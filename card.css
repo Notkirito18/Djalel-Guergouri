@@ -1,0 +1,184 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+/* h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+} */
+
+.my-card {
+  float: left;
+  padding: 0 1.7rem;
+  width: 400px;
+}
+
+.my-card .menu-content {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.my-card .menu-content::before,
+.my-card .menu-content::after {
+  content: "";
+  display: table;
+}
+.my-card .menu-content::after {
+  clear: both;
+}
+.my-card .menu-content li {
+  display: inline-block;
+}
+.my-card .menu-content a {
+  color: #fff;
+}
+.my-card .menu-content span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "Open Sans";
+  transform: translate(-50%, 0);
+}
+.my-card .wrapper {
+  background-color: #fff;
+  min-height: 540px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+}
+.overlay {
+  min-height: 540px;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+.wrapper:hover > .overlay {
+  visibility: visible;
+}
+.my-card .wrapper:hover .data {
+  transform: translateY(0);
+}
+.header {
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+.header > div {
+  margin-left: 5px;
+  font-size: larger;
+  height: 35px;
+  /* width: 35px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+.header > div > a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+.header > div:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.header > div:hover > a {
+  color: rgba(255, 255, 255, 0.9);
+}
+.my-card .data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(calc(140px + 1em));
+  transition: transform 0.3s;
+}
+.my-card .data .content {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+}
+.my-card .data .content .text {
+  text-align: justify;
+}
+.my-card .author {
+  font-size: 12px;
+}
+.my-card .card-title {
+  margin-top: 10px;
+  padding: 1rem;
+}
+
+.my-card input[type="checkbox"] {
+  display: none;
+}
+.my-card input[type="checkbox"]:checked + .menu-content {
+  transform: translateY(-60px);
+}
+.wrapper {
+  background: url(./images/dg-logo.png)
+    center / cover no-repeat;
+}
+.wrapper1 {
+  background: url(./images/projects/vouchy.jpg) center / cover no-repeat;
+}
+.wrapper2{
+  background: url(./images/projects/wwtg.jpg) center / cover no-repeat;
+}
+.wrapper:hover .menu-content span {
+  transform: translate(-50%, -10px);
+  opacity: 1;
+}
+.wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.data {
+  color: #fff;
+  transform: translateY(calc(70px + 4em));
+}
+.card-title a {
+  color: #fff;
+}
+.skills {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  font-size: 12px;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+}
+.skills::after {
+  content: "\2192";
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.3s;
+}
+.skills:hover::after {
+  transform: translate(5px, -50%);
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper{
+    min-height: auto !important;
+    height: 350px !important;
+  }
+  .my-card .data {
+    transform: translateY(calc(180px + 1em));
+  }
+}
